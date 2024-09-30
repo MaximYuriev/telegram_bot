@@ -15,7 +15,7 @@ bot = Bot(token=BOT_TOKEN)
 dispatcher = Dispatcher()
 
 async def get_dollar_rate():
-    async with Redis(host=REDIS_HOST, port=REDIS_PORT) as redis_client:
+    async with Redis(host="amvera-deimos451-run-redis", port=80git push amvera master) as redis_client:
         value = await redis_client.get(KEY_NAME)
         if value is not None:
             return f"{float(value)} рублей"
