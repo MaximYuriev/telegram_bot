@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  redis:
+    image: redis:7
+    container_name: redis_app
+
+  app:
+    build:
+      context: .
+    env_file:
+      - .env
+    container_name: telegram_bot_app
+    depends_on:
+      - redis
